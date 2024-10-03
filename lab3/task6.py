@@ -1,6 +1,5 @@
 def sixth_task():
     n = int(input())
-
     surname_count = {}
 
     for _ in range(n):
@@ -13,7 +12,7 @@ def sixth_task():
     same_surname_count = 0
     for count in surname_count.values():
         if count > 1:
-            same_surname_count += count - 1
+            same_surname_count += count
 
     print(same_surname_count)
 
