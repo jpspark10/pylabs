@@ -1,2 +1,0 @@
-BOT_TOKEN="idk"
-YANDEX_API_KEY_GEOCODER="idk"
