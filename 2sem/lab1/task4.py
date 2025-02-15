@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QLineEdit
+from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QLineEdit, QGridLayout
 
 MORSE_CODE = {
     'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.',
@@ -19,11 +19,20 @@ class MorseCodeApp(QWidget):
         self.input_field = QLineEdit(self)
         self.layout.addWidget(self.input_field)
 
+        grid_layout = QGridLayout()
+        row, col = 0, 0
+
         for letter, code in MORSE_CODE.items():
             button = QPushButton(letter, self)
+            button.setFixedSize(40, 40)  # Устанавливаем фиксированный размер
             button.clicked.connect(lambda _, c=code: self.add_morse_code(c))
-            self.layout.addWidget(button)
+            grid_layout.addWidget(button, row, col)
+            col += 1
+            if col > 5:  # 6 кнопок в ряду
+                col = 0
+                row += 1
 
+        self.layout.addLayout(grid_layout)
         self.setLayout(self.layout)
         self.setWindowTitle("Азбука Морзе")
 
