@@ -24,11 +24,11 @@ class MorseCodeApp(QWidget):
 
         for letter, code in MORSE_CODE.items():
             button = QPushButton(letter, self)
-            button.setFixedSize(40, 40)  # Устанавливаем фиксированный размер
+            button.setFixedSize(40, 40)
             button.clicked.connect(lambda _, c=code: self.add_morse_code(c))
             grid_layout.addWidget(button, row, col)
             col += 1
-            if col > 5:  # 6 кнопок в ряду
+            if col > 5:
                 col = 0
                 row += 1
 
