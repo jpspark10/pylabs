@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FlagApp</class>
+ <widget class="QWidget" name="FlagApp">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>300</width>
+    <height>200</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Текстовый флаг</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Выберите цвета флага</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QCheckBox" name="redCheckBox">
+        <property name="text">
+         <string>Красный</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="greenCheckBox">
+        <property name="text">
+         <string>Зелёный</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="blueCheckBox">
+        <property name="text">
+         <string>Синий</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="whiteCheckBox">
+        <property name="text">
+         <string>Белый</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="yellowCheckBox">
+        <property name="text">
+         <string>Жёлтый</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="drawButton">
+     <property name="text">
+      <string>Нарисовать</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="resultLabel">
+     <property name="text">
+      <string>Выберите цвета и нажмите "Нарисовать"</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+</ui>
