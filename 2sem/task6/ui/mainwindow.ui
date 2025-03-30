@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindowUI</class>
+ <widget class="QMainWindow" name="MainWindowUI">
+  <property name="windowTitle">
+   <string>Каталог библиотеки</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <!-- Панель поиска -->
+    <item>
+     <layout class="QHBoxLayout" name="searchLayout">
+      <item>
+       <widget class="QLineEdit" name="searchTitleLineEdit" placeholderText="Поиск по названию"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="searchTitleButton">
+        <property name="text">
+         <string>Найти</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="searchAuthorLineEdit" placeholderText="Поиск по автору"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="searchAuthorButton">
+        <property name="text">
+         <string>Найти</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <!-- Таблица с книгами -->
+    <item>
+     <widget class="QTableWidget" name="booksTableWidget">
+      <property name="columnCount">
+       <number>6</number>
+      </property>
+      <property name="horizontalHeaderLabels">
+       <stringlist>
+        <string>ID</string>
+        <string>Название</string>
+        <string>Автор</string>
+        <string>Год</string>
+        <string>Жанр</string>
+        <string>Изображение</string>
+       </stringlist>
+      </property>
+     </widget>
+    </item>
+    <!-- Панель управления книгами -->
+    <item>
+     <layout class="QHBoxLayout" name="crudLayout">
+      <item>
+       <widget class="QPushButton" name="addBookButton">
+        <property name="text">
+         <string>Добавить</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="editBookButton">
+        <property name="text">
+         <string>Изменить</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="deleteBookButton">
+        <property name="text">
+         <string>Удалить</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
