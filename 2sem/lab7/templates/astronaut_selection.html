@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Анкета для участия в миссии</h1>
+<form method="post">
+  <div class="mb-3"><label>Фамилия<input name="surname" class="form-control"></label></div>
+  <div class="mb-3"><label>Имя<input name="name" class="form-control"></label></div>
+  <div class="mb-3"><label>Email<input type="email" name="email" class="form-control"></label></div>
+  <div class="mb-3"><label>Образование<input name="education" class="form-control"></label></div>
+  <div class="mb-3"><label>Профессия<select name="profession" class="form-select">
+    {% for p in professions %}
+      <option value="{{ p }}">{{ p }}</option>
+    {% endfor %}
+  </select></label></div>
+  <div class="mb-3"><label>Пол:</label><br>
+    <div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="gender" value="male"><label class="form-check-label">Мужской</label></div>
+    <div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="gender" value="female"><label class="form-check-label">Женский</label></div>
+  </div>
+  <div class="mb-3"><label>Мотивация<textarea name="motivation" class="form-control"></textarea></label></div>
+  <div class="mb-3 form-check"><input class="form-check-input" type="checkbox" name="ready"><label class="form-check-label">Готовы ли остаться на Марсе?</label></div>
+  <button type="submit" class="btn btn-primary">Отправить</button>
+</form>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>Миссия Колонизация Марса</h1>
+  <div class="mt-4">
+    <a href="{{ url_for('index') }}" class="btn btn-primary me-2">Девиз миссии</a>
+    <a href="{{ url_for('promotion') }}" class="btn btn-secondary me-2">Промо</a>
+    <a href="{{ url_for('image_mars') }}" class="btn btn-success me-2">Image Mars</a>
+    <a href="{{ url_for('astronaut_selection') }}" class="btn btn-warning me-2">Анкета</a>
+    <a href="{{ url_for('carousel') }}" class="btn btn-info">Карусель</a>
+  </div>
+{% endblock %}

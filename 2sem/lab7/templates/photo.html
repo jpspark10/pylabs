@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Загрузка фото {{ nickname }}</h1>
+<form method="post" enctype="multipart/form-data">
+  <div class="mb-3">
+    <input type="file" name="photo" class="form-control">
+  </div>
+  <button class="btn btn-primary" type="submit">Загрузить</button>
+</form>
+{% if photo_url %}
+<div class="mt-3">
+  <img src="{{ photo_url }}" class="img-thumbnail" alt="Фото {{ nickname }}">
+</div>
+{% endif %}
+{% endblock %}
