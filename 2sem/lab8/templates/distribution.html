@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<ul class="list-group">
+  {% for member in crew %}
+    <li class="list-group-item">
+      {{ member.name }} {{ member.surname }} - Каюта №{{ loop.index }}
+      {% if loop.first %}
+        - капитан корабля
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
+{% endblock %}

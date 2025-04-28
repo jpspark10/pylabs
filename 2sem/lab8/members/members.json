@@ -1,0 +1,8 @@
+[
+  {
+    "name": "Тест",
+    "surname": "Тестов",
+    "photo": "photo/member1.jpg",
+    "specialties": ["тестировщик"]
+  }
+]
