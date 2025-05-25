@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Добавить работу{% endblock %}
+
+{% block content %}
+  <h1>Добавление работы</h1>
+  <form method="post">
+    {{ form.hidden_tag() }}
+    {{ form.team_leader.label }} {{ form.team_leader() }}<br>
+    {{ form.job.label }} {{ form.job() }}<br>
+    {{ form.work_size.label }} {{ form.work_size() }}<br>
+    {{ form.collaborators.label }} {{ form.collaborators() }}<br>
+    {{ form.is_finished.label }} {{ form.is_finished() }}<br>
+    {{ form.submit() }}
+  </form>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}Работы{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <h2 class="mb-4">Список работ</h2>
+
+  {% if current_user.is_authenticated %}
+    <a href="{{ url_for('add_job') }}" class="btn btn-success mb-3">Добавить работу</a>
+  {% endif %}
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Описание работы</th>
+        <th>Размер (часы)</th>
+        <th>Руководитель</th>
+        <th>Участники (IDs)</th>
+        <th>Дата начала</th>
+        <th>Дата окончания</th>
+        <th>Завершена</th>
+        <th>Действия</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for job in jobs %}
+      <tr>
+        <td>{{ job.id }}</td>
+        <td>{{ job.job }}</td>
+        <td>{{ job.work_size }}</td>
+        <td>{{ job.user.surname }} {{ job.user.name }}</td>
+        <td>{{ job.collaborators }}</td>
+        <td>{{ job.start_date.strftime('%Y-%m-%d') }}</td>
+        <td>{{ job.end_date.strftime('%Y-%m-%d') if job.end_date else '' }}</td>
+        <td>{{ 'Да' if job.is_finished else 'Нет' }}</td>
+        <td>
+          {% if current_user.id == job.team_leader or current_user.id == 1 %}
+            <a href="{{ url_for('edit_job', job_id=job.id) }}" class="btn btn-primary btn-sm">Изменить</a>
+            <a href="{{ url_for('delete_job', job_id=job.id) }}" class="btn btn-danger btn-sm">Удалить</a>
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

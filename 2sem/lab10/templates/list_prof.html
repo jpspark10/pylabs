@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if list_type == 'ul' %}
+<ul class="list-group">
+  {% for prof in professions %}
+    <li class="list-group-item">{{ prof }}</li>
+  {% endfor %}
+</ul>
+{% elif list_type == 'ol' %}
+<ol class="list-group list-group-numbered">
+  {% for prof in professions %}
+    <li class="list-group-item">{{ prof }}</li>
+  {% endfor %}
+</ol>
+{% endif %}
+{% endblock %}

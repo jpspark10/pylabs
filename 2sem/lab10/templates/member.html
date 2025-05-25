@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{ member.name }} {{ member.surname }}</h2>
+<img src="{{ url_for('static', filename=member.photo) }}" alt="Фото члена экипажа" class="img-fluid mb-3" style="max-width:400px;">
+<p>Специальности: {{ member.specialties | sort | join(', ') }}</p>
+{% endblock %}

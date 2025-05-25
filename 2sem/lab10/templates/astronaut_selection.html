@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+  <h2>{{ title or 'Запись добровольцем' }}</h2>
+  <form method="post" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    <div class="mb-3">
+      {{ form.surname.label(class="form-label") }}
+      {{ form.surname(class="form-control", placeholder="Ваша фамилия") }}
+    </div>
+    <div class="mb-3">
+      {{ form.name.label(class="form-label") }}
+      {{ form.name(class="form-control", placeholder="Ваше имя") }}
+    </div>
+    <div class="mb-3">
+      {{ form.email.label(class="form-label") }}
+      {{ form.email(class="form-control", placeholder="example@mail.com") }}
+    </div>
+    <div class="mb-3">
+      {{ form.education.label(class="form-label") }}
+      {{ form.education(class="form-control", placeholder="Ваше образование") }}
+    </div>
+    <div class="mb-3">
+      {{ form.profession.label(class="form-label") }}
+      {{ form.profession(class="form-select") }}
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Пол</label>
+      <div>
+        {% for subfield in form.gender %}
+          <div class="form-check form-check-inline">
+            {{ subfield(class="form-check-input") }}
+            {{ subfield.label(class="form-check-label") }}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="mb-3">
+      {{ form.motivation.label(class="form-label") }}
+      {{ form.motivation(class="form-control", rows=4, placeholder="Расскажите, почему хотите на Марс") }}
+    </div>
+    <div class="form-check mb-3">
+      {{ form.stay(class="form-check-input") }}
+      {{ form.stay.label(class="form-check-label") }}
+    </div>
+    <div class="mb-3">
+      {{ form.photo.label(class="form-label") }}
+      {{ form.photo(class="form-control") }}
+    </div>
+    <button type="submit" class="btn btn-primary">{{ form.submit.label.text }}</button>
+  </form>
+</div>
+{% endblock %}
